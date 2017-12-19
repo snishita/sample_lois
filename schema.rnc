@@ -1,6 +1,6 @@
 default namespace = "http://takushoku-u.ac.jp/foster/2.1"
 
-start = element students {students-content}
+start = element students {students-content} 
 
 students-content =
   attribute offset {xsd:nonNegativeInteger}?,
