@@ -1,5 +1,5 @@
 declare namespace rg="http://relaxng.org/ns/structure/1.0";
-(:declare namespace ea=$ns;:)
+(:declare namespace ea=$ns;:) 
 declare namespace ea="http://takushoku-u.ac.jp/educational_affairs/ns/2.1";
 declare namespace a="http://relaxng.org/ns/compatibility/annotations/1.0";
 declare namespace xsl="http://www.w3.org/1999/XSL/Transform";
