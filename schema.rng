@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://takushoku-u.ac.jp/foster/2.1" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="students">
+      <ref name="students-content"/>
+    </element>
+  </start>
+  <define name="students-content">
+    <optional>
+      <attribute name="offset">
+        <data type="nonNegativeInteger"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="limit">
+        <data type="nonNegativeInteger"/>
+      </attribute>
+    </optional>
+    <optional>
+      <element name="prev">
+        <data type="anyURI"/>
+      </element>
+    </optional>
+    <optional>
+      <element name="next">
+        <data type="anyURI"/>
+      </element>
+    </optional>
+    <zeroOrMore>
+      <element name="student">
+        <a:documentation>Title 学生
+FormRoot</a:documentation>
+        <ref name="student-content"/>
+      </element>
+    </zeroOrMore>
+  </define>
+  <define name="student-content">
+    <attribute name="id">
+      <data type="NMTOKEN"/>
+    </attribute>
+    <element name="faculty">
+      <a:documentation>Title 学部
+FormItem type=choice</a:documentation>
+      <ref name="faculty-content"/>
+    </element>
+    <element name="department">
+      <a:documentation>Title 学科
+FormItem type=choice</a:documentation>
+      <ref name="department-content"/>
+    </element>
+    <element name="year">
+      <a:documentation>Title 学年
+FormItem type=number length=2</a:documentation>
+      <data type="nonNegativeInteger"/>
+    </element>
+    <element name="number">
+      <a:documentation>Title 学生番号
+FormItem type=substring length=9</a:documentation>
+      <data type="NMTOKEN"/>
+    </element>
+    <element name="name">
+      <a:documentation>Title 氏名
+FormItem type=substring length=20</a:documentation>
+      <text/>
+    </element>
+    <element name="address">
+      <a:documentation>Title 住所
+FormItem type=substring length=50
+Access condition=officeStaff</a:documentation>
+      <text/>
+    </element>
+  </define>
+  <define name="faculty-content">
+    <attribute name="id">
+      <data type="NMTOKEN"/>
+    </attribute>
+    <text/>
+  </define>
+  <define name="department-content">
+    <attribute name="id">
+      <data type="NMTOKEN"/>
+    </attribute>
+    <text/>
+  </define>
+</grammar>

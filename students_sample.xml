@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns="http://takushoku-u.ac.jp/foster/2.1" offset="10">
+ <prev>http://foster2.takushoku-u.ac.jp/v2.1/students?offset=0</prev>
+ <student id="1300017">
+  <faculty id="eng">工学部</faculty>
+  <department id="cs">情報工学科</department>
+  <year>2</year>
+  <number>3t017</number>
+  <name>望月 大和</name>
+  <address>東京都八王子市館町</address>
+ </student>
+ <student id="1300018">
+  <faculty id="eng">工学部</faculty>
+  <department id="id">デザイン学科</department>
+  <year>3</year>
+  <number>3t018</number>
+  <name>清水 結衣</name>
+  <address>東京都文京区小日向</address>
+ </student>
+</students>

@@ -1,0 +1,41 @@
+default namespace = "http://takushoku-u.ac.jp/foster/2.1"
+
+start = element students {students-content}
+
+students-content =
+  attribute offset {xsd:nonNegativeInteger}?,
+  attribute limit {xsd:nonNegativeInteger}?,
+  element prev {xsd:anyURI}?,
+  element next {xsd:anyURI}?,
+  ##Title 学生
+  ##FormRoot
+  element student {student-content}*
+
+student-content =
+  attribute id {xsd:NMTOKEN},
+  ##Title 学部
+  ##FormItem type=choice
+  element faculty {faculty-content},
+  ##Title 学科
+  ##FormItem type=choice
+  element department {department-content},
+  ##Title 学年
+  ##FormItem type=number length=2
+  element year {xsd:nonNegativeInteger},
+  ##Title 学生番号
+  ##FormItem type=substring length=9
+  element number {xsd:NMTOKEN},
+  ##Title 氏名
+  ##FormItem type=substring length=20
+  element name {text},
+  ##Title 住所
+  ##FormItem type=substring length=50
+  ##Access condition=officeStaff
+  element address {text}
+faculty-content =
+  attribute id {xsd:NMTOKEN},
+  text
+
+department-content =
+  attribute id {xsd:NMTOKEN},
+  text
